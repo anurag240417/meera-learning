@@ -1,0 +1,82 @@
+{
+  "10": {
+    "pass": true,
+    "actual": "Consent unchecked: \"Tick the box to agree to be contacted.\"; requests sent: 0.",
+    "evidence": "chrome_form-no-consent.png"
+  },
+  "11": {
+    "pass": true,
+    "actual": "POST http://localhost:8787/api/register → 201; role=status: \"Your request has been received. We will be in touch soon.Reference: b4d62e5c-41ba-4a0e-83e9-d9121104f733\"; fields reset: true.",
+    "evidence": "chrome_form-success.png"
+  },
+  "12": {
+    "pass": true,
+    "actual": "Request body altered by the test's fetch wrapper (programInterest \"unknown\") → 400; role=alert: \"Choose a valid program. Some details were not accepted. Check the form and try again.\"; form data kept: true. Direct POST with short name/bad email → 400 Enter a name between 2 and 80 characters..",
+    "evidence": "chrome_form-api-400.png"
+  },
+  "14": {
+    "pass": true,
+    "actual": "No console errors, warnings or page errors from the app across all checks above (dev server and production preview). Only browser log: 1x network \"400 (Bad Request)\" from test 12's deliberately altered request.",
+    "evidence": ""
+  },
+  "01": {
+    "pass": true,
+    "actual": "scrollWidth 320 / clientWidth 320; 0 overflowing elements; program grid 1 column(s)",
+    "evidence": "chrome_320px.png"
+  },
+  "02": {
+    "pass": true,
+    "actual": "scrollWidth 390 / clientWidth 390; 0 overflowing elements; program grid 1 column(s)",
+    "evidence": "chrome_390px.png"
+  },
+  "03": {
+    "pass": true,
+    "actual": "scrollWidth 768 / clientWidth 768; 0 overflowing elements; program grid 2 column(s)",
+    "evidence": "chrome_768px.png"
+  },
+  "04": {
+    "pass": true,
+    "actual": "scrollWidth 1200 / clientWidth 1200; 0 overflowing elements; program grid 3 column(s)",
+    "evidence": "chrome_1200px.png"
+  },
+  "05": {
+    "pass": true,
+    "actual": "scrollWidth 1440 / clientWidth 1440; 0 overflowing elements; program grid 3 column(s)",
+    "evidence": "chrome_1440px.png"
+  },
+  "06": {
+    "pass": true,
+    "actual": "Focus order: a:Skip to main content → a:Meera Verma Learning Studio, bac → a:Programs → a:Why us → a:FAQs → a:Reserve a call → a:Reserve a free call → a:View program: Foundations Lab → → a:View program: Focus & Study Skil → a:View program: Career Starter → → input:fullName → input:email → select:Select a programFoundations LabF → input:consent. Elements without visible outline: 0. Skip link moves focus to #main.",
+    "evidence": "chrome_keyboard-focus.png"
+  },
+  "07": {
+    "pass": true,
+    "actual": "aria-expanded false → true (Enter) → false (Escape, focus back on button: true); reopened with Space, tabbed to \"FAQs\", Enter → URL #faq, menu aria-expanded false, nav hidden.",
+    "evidence": "chrome_mobile-menu-open.png"
+  },
+  "08": {
+    "pass": true,
+    "actual": "4 errors shown (Enter your full name. | Enter your email address. | Choose a program. | Tick the box to agree to be contacted.); 4 fields aria-invalid; focus moved to #register-fullName; requests sent: 0.",
+    "evidence": "chrome_form-empty.png"
+  },
+  "09": {
+    "pass": true,
+    "actual": "Email \"test-learner@example\" rejected: \"Enter a valid email address, like name@example.com.\"; requests sent: 0.",
+    "evidence": "chrome_form-bad-email.png"
+  },
+  "X1": {
+    "pass": true,
+    "actual": "Network failure: alert shown, name field still \"Test Learner\".",
+    "evidence": ""
+  },
+  "X2": {
+    "pass": true,
+    "actual": "\"View program\" on Career Starter → select value \"career\", URL #register.",
+    "evidence": ""
+  },
+  "X3": {
+    "pass": true,
+    "actual": "Static build without VITE_API_BASE_URL: no request sent (0); message \"Online registration is not connected on this preview site, so nothing was sent. Your details are still here.\".",
+    "evidence": "chrome_prod-no-api.png"
+  }
+}

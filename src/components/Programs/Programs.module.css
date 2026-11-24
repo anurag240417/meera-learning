@@ -1,0 +1,20 @@
+.section {
+  padding-block: var(--space-6) var(--space-8);
+  scroll-margin-top: var(--space-2);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

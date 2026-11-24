@@ -1,0 +1,28 @@
+.footer {
+  padding-block: var(--space-4);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.inner {
+  display: grid;
+  gap: 4px;
+}
+
+.name { font-weight: 700; }
+
+.copyright {
+  color: #d5e2da;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-1) var(--space-3);
+  }
+
+  .copyright { margin-left: auto; }
+}

@@ -1,0 +1,40 @@
+COMPLETION NOTE: Meera Verma Learning Studio landing page
+Job ID: TlSMB6eI9miuLSBB4WIr
+
+GitHub repository: <ADD GITHUB URL>
+Live deployment:   <ADD VERCEL OR NETLIFY HTTPS URL>
+
+WHAT WAS IMPLEMENTED
+- A single-page React 18 + Vite 5 site built from the supplied 1440px and 390px design references,
+  using the approved copy, brand colours, spacing scale, logo and WebP artwork.
+- Reusable components, each with its own CSS Module: Header (with mobile menu), Hero, Benefits,
+  Programs + ProgramCard, RegistrationForm, Faq, Footer, plus shared Container, Button and SectionHeader.
+  Only design tokens and element defaults are global.
+- Semantic HTML5 landmarks, one h1 with ordered h2/h3 headings, meaningful alt text, a skip link,
+  visible focus states and touch targets of at least 44px.
+- Mobile menu (below 768px): toggles aria-expanded, works with Enter/Space, closes on Escape
+  (focus returns to the button) and after a link is chosen.
+- Registration form: controlled inputs; required-field, length, email and program validation that
+  mirrors the API; consent unchecked by default and required; nothing is sent until the form is valid.
+  Shows a pending state, success with role="status", and errors with role="alert". Data is kept on
+  network or API errors. "View program" preselects that program in the form.
+- Airbnb style enforced with eslint-config-airbnb (React, hooks, jsx-a11y, import): 0 problems.
+
+TESTING (docs/testing/ACCEPTANCE_TEST_LOG.csv, 18/18 pass)
+- Run in real Chrome and Firefox (installed desktop builds, headless via puppeteer-core) on Windows 11,
+  2026-11-24, at 320, 390, 768, 1200 and 1440px: no horizontal overflow, keyboard order, mobile menu,
+  all form cases, 201 and 400 responses from the supplied local API, network failure, and no console
+  errors or warnings from the app. Screenshots are in docs/testing/screenshots/.
+- For row 12 (400 response), the client never sends invalid data. So the test harness altered the request
+  body in the browser (programInterest "unknown") to make the real local API return 400 and check how
+  the UI handles it. A direct POST to the API also returned 400.
+- Production build, lint and API contract tests: docs/testing/build-output.txt.
+
+REGISTRATION ON THE LIVE DEPLOYMENT
+The supplied API is a local development service. It binds to 127.0.0.1 and only allows localhost
+origins, and a static Vercel/Netlify site cannot post to a visitor's localhost. The live demo is
+therefore built without VITE_API_BASE_URL. The form validates fully, then tells the visitor that online
+registration is not connected on this preview, and it sends no data. Full submission was tested
+locally against the supplied API only, not against a production server. To enable live registration,
+host an HTTPS endpoint with the same contract, allow the site's origin in CORS, set VITE_API_BASE_URL
+in the hosting provider and redeploy (details in README.md).

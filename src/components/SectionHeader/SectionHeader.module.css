@@ -1,0 +1,20 @@
+.header {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.heading {
+  font-size: clamp(1.625rem, 1.2rem + 1.8vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.intro {
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1875rem);
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .header { margin-bottom: var(--space-4); }
+}
