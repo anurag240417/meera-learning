@@ -1,8 +1,8 @@
 COMPLETION NOTE: Meera Verma Learning Studio landing page
 Job ID: TlSMB6eI9miuLSBB4WIr
 
-GitHub repository: <ADD GITHUB URL>
-Live deployment:   <ADD VERCEL OR NETLIFY HTTPS URL>
+GitHub repository: https://github.com/anurag240417/meera-learning
+Live deployment:   https://meera-learning.vercel.app
 
 WHAT WAS IMPLEMENTED
 - A single-page React 18 + Vite 5 site built from the supplied 1440px and 390px design references,
